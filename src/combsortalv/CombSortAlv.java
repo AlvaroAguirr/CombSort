@@ -46,7 +46,38 @@ public static void ImprimirArreglo(int[]arreglo){
         System.out.println("\n\n");
         
         
+        System.out.println("ordenando tu arreglo");
+        boolean cambios;
+       
         
+        do{
+            int salto=(arr.length*10)/13;
+            cambios=false;
+            for(int i=0; i<arr.length-salto;i++){
+                if(arr[i]>arr[i+salto]){
+                    // hacer cambios 
+            int aux;
+            aux=arr[i];
+            arr[i]=arr[i+salto];
+            arr[i+salto]=aux;
+            cambios=true;
+                    System.out.print(i);
+                    }
+            }
+        }while(cambios);
+        
+        System.out.println("imprimiendo tu arreglo arreglado");
+        for (int fix:arr){
+            System.out.println(fix);
+        }
+        
+        
+        
+        
+        
+        
+        
+            
 
     }
     
