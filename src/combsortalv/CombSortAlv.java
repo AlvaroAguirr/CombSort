@@ -19,7 +19,14 @@ public static void ImprimirArreglo(int[]arreglo){
     }     
 }
     
-    
+public static int Vainter(int inter){
+inter= (inter*10)/13;
+if(inter<1)
+    return 1;
+
+return inter;
+}
+
     
     public static void main(String[] args) throws IOException {
 // comb sort algorithm by Alvaro aguirre palestina From 4°A  of TIADSM 
@@ -46,30 +53,32 @@ public static void ImprimirArreglo(int[]arreglo){
         System.out.println("\n\n");
         
         
-        System.out.println("ordenando tu arreglo");
-        boolean cambios;
+        System.out.println("\n ordenando tu arreglo");
+        boolean cambios=true;
+        int dis=arr.length;
+      
+    while(dis!=1 || cambios==true){
+      
+        dis=Vainter(dis);
        
-        
-        do{
-            int salto=(arr.length*10)/13;
-            cambios=false;
-            for(int i=0; i<arr.length-salto;i++){
-                if(arr[i]>arr[i+salto]){
-                    // hacer cambios 
-            int aux;
-            aux=arr[i];
-            arr[i]=arr[i+salto];
-            arr[i+salto]=aux;
-            cambios=true;
-                    System.out.print(i);
+          cambios=false;
+            for(int i=0; i<arr.length-dis;i++){
+                if(arr[i]>arr[i+dis]){
+            int aux=arr[i];
+            arr[i]=arr[i+dis];
+            arr[i+dis]=aux;  
+             cambios =true;   
                     }
             }
-        }while(cambios);
+    }
+
         
-        System.out.println("imprimiendo tu arreglo arreglado");
+        System.out.println("\n imprimiendo tu arreglo arreglado");
         for (int fix:arr){
             System.out.println(fix);
+            
         }
+        System.out.println("tu arreglo es de "+arr.length+" elementos");
         
         
         
