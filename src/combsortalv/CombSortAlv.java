@@ -18,7 +18,7 @@ public static void ImprimirArreglo(int[]arreglo){
 }
     
 public static int Vainter(int inter){
-inter= (inter*10)/13;
+inter=inter/13;
 if(inter<1)
     return 1;
 return inter;
@@ -29,14 +29,23 @@ public static int[] combSort(int[] arr){
         int dis=arr.length;
     while(dis!=1 || cambios==true){
         dis=Vainter(dis);
+        
           cambios=false;
             for(int i=0; i<arr.length-dis;i++){
+                 for(int a:arr){
+                    System.out.print(a+" ");
+                    }
+               System.out.println();
                 if(arr[i]>arr[i+dis]){
             int aux=arr[i];
             arr[i]=arr[i+dis];
             arr[i+dis]=aux;  
-             cambios =true;   
-                    } } }
+             cambios =true;
+                    
+             
+                }
+               
+            }}
 return arr;
 }
     
