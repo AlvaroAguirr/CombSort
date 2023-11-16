@@ -18,7 +18,7 @@ public static void ImprimirArreglo(int[]arreglo){
 }
     
 public static int Vainter(int inter){
-inter=inter/13;
+inter= (inter*10)/13;
 if(inter<1)
     return 1;
 return inter;
